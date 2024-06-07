@@ -1,0 +1,46 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+    <script src="~/Scripts/bootstrap.bundle.js"></script>
+    <title>@ViewBag.Title</title>
+</head>
+<body>
+    <table  class="table table-primary table-striped table-bordered table-hover table-sm table-bordered">
+        
+        <tr>
+            <td  >
+                <a href="/UserArea/UserAreaHome/Index">Home</a>
+            </td>
+            <td  >
+                <a href="/UserArea/Subject/Index">Subject</a>
+            </td>
+            <td  >
+                <a href="/UserArea/Author/Index">Author</a>
+            </td>
+            <td  >
+                <a href="/UserArea/Book/Index">Book</a>
+            </td>
+            <td  >
+                <a href="/UserArea/Sales/Index">Sales</a>
+            </td>
+            <td  >
+                <a href="/UserArea/Customer/Index">Customer</a>
+            </td>
+            <td  >
+                <a href="/ManageUser/LogOut">Log Out</a>
+            </td>
+             
+
+
+
+
+        </tr>
+    </table>
+    <div >
+        @RenderBody()
+    </div>
+</body>
+</html>

@@ -1,0 +1,83 @@
+﻿<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            @model IEnumerable<MiniProjectMVC.Models.Sales>
+
+            @{
+                ViewBag.Title = "Index";
+                Layout = "~/Areas/UserArea/Views/Shared/_ProjectLayout.cshtml";
+            }
+
+            <h2>Index</h2>
+
+            <p>
+                @Html.ActionLink("Create New", "Create")
+            </p>
+            <table class="table" border="1">
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.SalesId)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Customer.CustomerName)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.SalesDate)
+                    </th>
+                    @*<th>
+                    @Html.DisplayNameFor(model => model.Book.BookName)
+                </th>*@
+
+
+                    @*<th>
+                    @Html.DisplayNameFor(model => model.Price *model. Qty)
+                </th>*@
+                    @*<th>
+                    @Html.DisplayNameFor(model => model.Qty)
+                </th>*@
+                    <th>Amount</th>
+
+
+                </tr>
+
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.SalesId)
+                        </td>
+                        @*<td>
+                        @Html.DisplayFor(modelItem => item.Book.BookName)
+                    </td>*@
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Customer.CustomerName)
+                        </td>
+                        @*<td>
+                        @Html.DisplayFor(modelItem => item.SalesDate)
+                    </td>*@
+                    <td>
+                        @Html.DisplayFor(modelItem => item.SalesDate)
+                    </td>
+                        @*<td>
+                        @Html.DisplayFor(modelItem => item.Price * item.Qty )
+                    </td>*@
+                        @*<td>
+                        @Html.DisplayFor(modelItem=>item.Qty)
+                    </td>*@
+                        <td>@(@item.Price * item.Qty)</td>
+
+                        <td>
+                            @Html.ActionLink("Edit", "Edit", new { id = item.SalesId }, htmlAttributes: new { @class = "btn btn-success" }) |
+                            @Html.ActionLink("Details", "Details", new { id = item.SalesId }, htmlAttributes: new { @class = "btn btn-primary" }) |
+                            @Html.ActionLink("Delete", "Delete", new { id = item.SalesId }, htmlAttributes: new { @class = "btn btn-info" })
+                        </td>
+                    </tr>
+                }
+
+            </table>
+
+
+        </div>
+    </div>
+
+</div>
